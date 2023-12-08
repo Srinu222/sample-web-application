@@ -1,1 +1,31 @@
-1
+node {
+    
+        def awsRegion = 'your-aws-region'
+        def ecrRegistry = 'your-ecr-registry'
+        def ecrRepoName = 'your-ecr-repo'
+        def dockerImageName = 'your-docker-image'
+        def dockerImageTag = 'latest'
+
+        stage('Clone Code') {
+            sh 'ls -latr'
+        }
+
+        /*stage('Build Package') {
+            sh 'mvn clean install'
+        }
+
+        stage('Update JAR in Dockerfile') {
+            sh "sed -i 's#COPY target/your-app.jar /app.jar#COPY target/your-updated-app.jar /app.jar#' path/to/Dockerfile"
+        }
+
+        stage('Build Docker Image') {
+            sh "docker build -t $dockerImageName -f path/to/Dockerfile ."
+        }
+
+        stage('Push to ECR') {
+            sh "aws ecr get-login-password --region $awsRegion | docker login --username AWS --password-stdin $ecrRegistry"
+            sh "docker tag $dockerImageName $ecrRegistry/$ecrRepoName:$dockerImageTag"
+            sh "docker push $ecrRegistry/$ecrRepoName:$dockerImageTag"
+        }*/
+    
+}
