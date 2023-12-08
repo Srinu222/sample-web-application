@@ -9,6 +9,7 @@ node {
         stage('Clone Code') {
             sh '''
 git clone https://github.com/Srinu222/sample-web-application.git
+cd sample-web-application
 git branch -a
 '''
         }
