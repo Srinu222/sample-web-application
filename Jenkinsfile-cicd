@@ -7,7 +7,10 @@ node {
         def dockerImageTag = 'latest'
 
         stage('Clone Code') {
-            sh 'ls -latr'
+            sh '''
+git clone https://github.com/Srinu222/sample-web-application.git
+git branch -a
+'''
         }
 
         /*stage('Build Package') {
