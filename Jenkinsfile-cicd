@@ -6,6 +6,8 @@ node {
         def dockerImageName = 'your-docker-image'
         def dockerImageTag = 'latest'
         def mavenHome = tool 'test_maven'
+        def mavenBin = "${mavenHome}/bin"
+        env.PATH = "${mavenBin}:${env.PATH}"
 
         stage('Build Package') {
             sh ''' 
