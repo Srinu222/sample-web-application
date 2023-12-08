@@ -9,14 +9,20 @@ node {
         stage('Clone Code') {
             sh '''
 ls -latr
-git clone https://github.com/Srinu222/sample-web-application.git
 
-ls -latr
+
+
 '''
         }
 
-        /*stage('Build Package') {
-            sh 'mvn clean install'
+        stage('Build Package') {
+            sh ''' 
+            ls -latr
+            cd sample-web-application/
+            mvn clean install
+ls -latr
+            '''
+
         }
 
         stage('Update JAR in Dockerfile') {
