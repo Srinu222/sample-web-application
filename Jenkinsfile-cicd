@@ -5,6 +5,7 @@ node {
         def ecrRepoName = 'your-ecr-repo'
         def dockerImageName = 'your-docker-image'
         def dockerImageTag = 'latest'
+        def mavenHome = tool 'test_maven'
 
         stage('Build Package') {
             sh ''' 
